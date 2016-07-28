@@ -24,8 +24,168 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+				<section>
+					<img src="assets/logo.png" />
+					<h2>10 Lessons Learned Building The Delivery.com App for Android</h2>
+					<p>Jesse Sessler & Bruno Barbieri</p>
+				</section>
+				
+				<section>
+					<h2>What is Delivery.com?</h2>
+					<p class="fragment">Delivery.com is an ecommerce platform that empowers the neighborhood economy by enabling customers to order online from over 10,000 of their favorite local merchants.
+					<ul class="fragment">
+						<li>Restaurants</li>
+						<li>Grocery Stores</li>
+						<li>Wine and Spirits Shops</li>
+						<li>Laundry and Dry Cleaning Providers</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>A Quick History With RN</h2>
+					<p class="fragment">Start in October with version ~0.11</p>
+					<p class="fragment">iOS Only - Integrated into our existing app</p>
+					<div class="fragment img-inline">
+						<img class="img-small" src="assets/order_details.jpg" />
+						<img class="img-small" src="assets/merchant_info.jpg" />
+					</div>
+				</section>
+
+				<section>
+					<h2>A Quick History With RN</h2>
+					<p class="fragment">Current Android app is Phonegap</p>
+					<p class="fragment">Started Prototyping RN Android App in January</p>
+					<p class="fragment">Received approval and started work in April</p>
+					<p class="fragment">We're currently in closed Beta with ~300 users</p>
+					<p class="fragment">Well Over 50% complete, so far receiving very positive feedback</p>
+				</section>
+
+				<section>
+					<h2>App Overview</h2>
+					<p class="fragment">Our "Stack":</p>
+					<ul class="fragment">
+						<li>React Native</li>
+						<li>Redux</li>
+						<li>Android Studio</li>
+						<li>Fabric / Crashlytics for crash reporting</li>
+						<li>Google Analytics / Leanplum for tracking</li>
+					</ul>
+					<p class="fragment">Stats:</p>
+					<ul class="fragment">
+						<li>120 Components</li>
+						<li>7 Bridged Native Modules</li>
+						<li>30 Navigation Routes</li>
+						<li>28 Reducers</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>DEMO</h2>
+					<img src="assets/logo_small.png" />
+				</section>
+
+				<section>
+					<h2>10 Lessons We've Learned Along The Way</h2>
+					<img class="img-small" src="assets/android_smart.png" />
+				</section>
+				
+				<section>
+					<!-- Greatly increased productivity once we found an ideal setup -->
+					<!-- Rarely use Android Studio, only for writing Java -->
+					<h2>1. Dev Environment / Setup is huge</h2>
+					<img class="fragment img-small" src="assets/setup.png" />
+					<p class="fragment">Also keep RN Facebook page, Discord Chat open</p>
+					<div class="fragment img-inline">
+						<img class="img-code" src="assets/alias.png" />
+						<img class="img-code" src="assets/install_debug.png" />
+						<img class="img-code" src="assets/install_apk.png" />
+					</div>
+					<a class="fragment" href="https://medium.com/delivery-com-engineering/react-native-stop-shaking-your-phone-1f4863140146#.vq2xo7bt7">delivery-com-engineering/react-native-stop-shaking-your-phone</a>
+					<a class="fragment" href="https://medium.com/komenco/useful-react-native-npm-scripts-6c07b04c3ac3#.wk3lzf145">Other helpful npm scripts</a>
+					<p class="fragment">Don't always develop with dev mode = true</p>
+					<!-- Talk about pros / cons of hot reloading (app crashes with circular require references, stateless, etc) -->
+				</section>
+
+				<section>
+					<h2>2. Navigation Tricks</h2>
+					<p class="fragment">Using the legacy Navigator, Experimental was brand new and unstable when we started</p>
+					<p class="fragment">Pass navigator into every route</p>
+					<img class="fragment img-code" src="assets/navigator.png" />
+					<p class="fragment">InteractionManager.runAfterInteractions for transitions to heavy scenes <a href="https://facebook.github.io/react-native/docs/performance.html#slow-navigator-transitions">(docs)</a></p>
+					<img class="fragment img-code" src="assets/run_after_interactions.png" />
+					<p class="fragment">Add a background color to every scene, even if it's white</p>
+					<div class="fragment img-inline">
+						<video controls loop width="500" height="360" src="assets/nav_before.mp4"></video>
+						<video controls loop width="500" height="360" src="assets/nav_after.mp4"></video>
+					</div>
+					<p class="fragment">The Fake NavBar Hack</p>
+					<div class="fragment img-inline">
+						<video controls loop width="500" height="360" src="assets/fake_nav_before.mp4"></video>
+						<video controls loop width="500" height="360" src="assets/fake_nav_after.mp4"></video>
+					</div>
+				</section>
+
+				<section>
+					<h2>3. Use Redux, But Don't be Scared To Use State</h2>
+					<p class="fragment">Redux for app-wide state, this.state for Component state, and local variables when it doesn't affect rendering</p>
+					<!-- Redux is great for large state management but at a certain scale waiting for redux to trigger re-renders can be too slow -->
+					<p class="fragment">Structure: Views(redux) &rarr; Components</p>
+					<!-- Tried to stick to convention of only connecting Views to Redux but sometimes just makes sense to connect components (applies for global components like navbar) -->
+					<p class="fragment">Pass navigator into every route</p>
+				</section>
+
+				<section>
+					<h2>4. Improving Large List Performance</h2>
+					<p class="fragment">initialListSize and scrollRenderAheadDistance are more powerful than you'd think</p>
+					<p class="fragment">Tradeoff between rows loaded & time spent</p>
+					<p class="fragment">Any other ListView tricks we've used?</p>
+				</section>
+				
+				<section>
+					<h2>5. Sharing Code With Other Platforms</h2>
+					<p class="fragment">Web, IOS, Android teams all use React / React Native + Redux</p>
+					<p class="fragment">Keep most non-component code in a shared Git repository, which is a dependency through npm</p>
+					<img class="fragment" src="assets/packagejson.png" />
+					<img class="fragment" src="assets/fsl.png" />
+					<img class="fragment" src="assets/item_modal_view.png" />
+					<p class="fragment">We're now sharing developers across teams as well!</p>
+					<!-- Talk about how good the experience has been and how Iveta has been really productive since day 1 with
+					virtually no help from either of us -->
+				</section>
+
+				<section>
+					<h2>6. Use icons over images when possible</h2>
+					<p class="fragment"><a href="https://github.com/oblador/react-native-vector-icons">react-native-vector-icons</a> has been really easy to use</p>
+					<p class="fragment">Fontello for custom icons</p>
+				</section>
+
+				<section>
+					<h2>7. You'll Find Missing Features, Contribute to RN!</h2>
+					<p class="fragment">Really good way to learn</p>
+					<p class="fragment">You don't need to know Obj C or Java to contribute</p>
+					<p class="fragment">We've had 5 Android contributions without knowing Android development</p>
+					<p class="fragment">Before you contribute:</p>
+					<ul class="fragment">
+						<li>Read <a href="https://github.com/facebook/react-native/blob/master/CONTRIBUTING.md">contributing guidelines</a></li>
+						<li>Look around the issues / pull requests to see if a fix exists</li>
+						<li>Check <a href="https://js.coach/">js.coach</a> for an external package</li>
+						<li>Ask the Facebook group or discord if this is a needed feature that no one is working on</li>
+						<li>Getting code merged to master in RN core is a time consuming process, be sure it's worth it before you start</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>8. Parallax and Other Scrolling Tricks</h2>
+					<video class="fragment" controls loop width="500" height="360" src="assets/parallax.mp4"></video>
+					<p class="fragment">The Android onScoll event doesn't fire often enough, makes for choppy scroll effects</p>
+					<p class="fragment">Use Animated.Event to greatly improve performance</p>
+					<img />
+					<img />
+					<p class="fragment">Allows you to bypass setting state on every scroll event</p>
+					<p class="fragment"></p>
+				</section>
+
 			</div>
 		</div>
 
@@ -36,6 +196,9 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
+				width: '100%',
+				height: '80%',
+				top: '20%',
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [

@@ -1,0 +1,87 @@
+Notes
+
+On Mon, Jul 25, 2016 at 5:28 PM, Jesse Sessler <jesse.sessler@gmail.com> wrote:
+Just brainstorming here. If you have time take a look and let me know what you like / don't like or what you'd add. The talk is called "10 Lessons Learned Building The Delivery.com App for Android". I figure we can give an intro and high level view of the app and then go into the 10 things. Also do some code samples and demos along the way.
+
+## 1. Dev Environment / Setup is huge.
+ * Greatly increased productivity once we had devices, vysor, aliases, entire setup in place
+ * Show terminal Setup - packager + adb logcat (rnlog)
+ * Show aliases for install-apk/debug, adp reverse, adb shell input, etc
+   * ./gradlew -stop if any problems. 
+        * Shortucts:   https://medium.com/delivery-com-engineering/react-native-stop-shaking-your-phone-1f4863140146#.vq2xo7bt7    (R+R to reload added on 0.30)
+ * Show Vysor
+ * Use Android Studio + Emulators if need be, Don't use Genymotion (not sure about this)
+    * Ideal cd android/ && gradlew installDebug, use android studio only if you need to debug Java
+ * https://medium.com/komenco/useful-react-native-npm-scripts-6c07b04c3ac3#.wk3lzf145
+ * Hot reloading is great for designing new components but I prefer to develop in release mode as often as possible. Crashes the app for stateless components
+ * Keep Facebook page, discord, docs open always
+
+## 2. Our Choice for Navigation system. Don't use experimental just yet
+ * Routes with components, Pass navigator into every route
+ * InteractionManager.runAfterInteractions for scene transitions to heavy Scenes. https://facebook.github.io/react-native/docs/performance.html#slow-navigator-transitions
+ * Make sure to have background colors (usually white) on new scenes
+ * Talk about Fake NavBar Hack, moving from a scene with a navbar to a scene without one. Show before and after gifs
+
+## 3. Use redux for app-wide state, local state for component state, and local vars when you can.
+ * Redux is perfect for large state management but we a lot of data in redux so it starts to slow down sometimes.
+ * Don't rely on componentWillReceiveProps to get props from redux, but once in a while it might save you (show example)
+ * Use this.something instead of putting something on state if you can. Keep state as lean as possible
+ * Structure: Views -> Components. Tried to stick to convention of only connecting Views to Redux but sometimes just makes sense to connect components (applies for global components like navbar)
+
+## 4. Tweak ListView props for best performance of large lists
+ * Combination of initialListSize and scrollRenderAheadDistance help a lot more than you'd think. Play with this values until you get the best relationship (rows loaded vs time spent)
+ * Any other ListView tricks we've used?
+
+## 5. Sharing code from our website was surprisingly painless (and sharing developers too!)
+ * Show how were using npm + @providesModule trick for FSL
+ * Maybe do the same for Components/Components
+ * Sharing a developer from our web team went really well. Productive from Day 1 with basically no help from either of us
+
+## 6. Use icons over images when possible
+ * react-native-vector-icons
+ * Fontello for custom icon set
+ * Easy to use, easy to style
+
+## 7. You'll find missing features, don't be afraid to contribute.
+ * Still feels like most people are using RN on iOS
+ * Means there are more Android bugs
+ * I know 0 Java and was able to submit 2 PRs
+ * Bruno submitted 3 PRs before we even got started
+    * Contribution Guidelines:   https://github.com/facebook/react-native/blob/master/CONTRIBUTING.md 
+     * You'll learn A LOT
+     * Before doing a massive work and submitting a PR (which may be rejected) , try to find / comment on any related issues and ping relevant people to see if your would be welcome and your approach is right. You can use the FB group too.  Other people might be already working on it. Sometimes an external package is your best option.
+
+
+
+## 8. Parallax and Animated.Event
+ * Find some good code to show here. GIFs > code 
+ * https://github.com/facebook/react-native/issues/2228
+ * https://github.com/jaysoo/react-native-parallax-scroll-view/blob/master/src/index.js
+
+## 9. Orientation (this isn't in prod but I think it still might help people to show how far we got and the limitations)
+ * https://github.com/facebook/react-native/issues/3219
+ * https://developer.android.com/guide/topics/resources/runtime-changes.html
+ * https://corbt.com/posts/2016/03/16/detecting-orientation-in-react-native.html
+ * Show code where we dispatch in redux
+ * Don't put height/width calculations in StyleSheet if based on screensize
+
+## 10. Dev Process / Conventions to stick to / Maybe File Structure
+ * eslint bot + eslint --fix .
+ * Document your proptypes - good for the team and you can use docgen to generate documentation. (mention yellow screens with info about missing props or wrong types)
+
+Other possible topics:
+ * Tips/Tricks on How to write a NativeModule
+ * Jump Menu using findNodeHandle and that whole process, sticky header
+ * Styles / ThemeStyles / LayoutHelper - I'd mention this somewhere.
+ * Reorder Decorator / HOC
+ * AsyncActionCreator and using promises
+
+Stats (At time of writing this):
+ * 120 components
+ * 7 Bridged Native Modules
+ * 28 reducers
+ * 30 routes
+
+Add email to join beta (?)
+
+androidbetafeedback@delivery.com / mention 10% off on all your orders until the end of august
