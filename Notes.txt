@@ -85,3 +85,18 @@ Stats (At time of writing this):
 Add email to join beta (?)
 
 androidbetafeedback@delivery.com / mention 10% off on all your orders until the end of august
+
+
+
+
+
+## 1. Dev Environment / Setup is huge.
+## 2. Our Choice for Navigation system. Don't use experimental just yet
+## 3. Use redux for app-wide state, local state for component state, and local vars when you can.
+## 4. Tweak ListView props for best performance of large lists
+## 5. Sharing code from our website was surprisingly painless (and sharing developers too!)
+## 6. Orientation (this isn't in prod but I think it still might help people to show how far we got and the limitations)
+## 7. You'll find missing features, don't be afraid to contribute.
+## 8. Parallax and Animated.Event
+## 9. Native Modules
+## 10. Dev Process / Conventions to stick to / Maybe File Structure

@@ -27,13 +27,13 @@
 
 				<section>
 					<img src="assets/logo.png" />
-					<h2>10 Lessons Learned Building The Delivery.com App for Android</h2>
+					<h2>10 Lessons Learned Building The delivery.com App for Android</h2>
 					<p>Jesse Sessler & Bruno Barbieri</p>
 				</section>
 				
 				<section>
-					<h2>What is Delivery.com?</h2>
-					<p class="fragment">Delivery.com is an ecommerce platform that empowers the neighborhood economy by enabling customers to order online from over 10,000 of their favorite local merchants.
+					<h2>What is delivery.com?</h2>
+					<p class="fragment">delivery.com is an ecommerce platform that empowers the neighborhood economy by enabling customers to order online from over 10,000 of their favorite local merchants.
 					<ul class="fragment">
 						<li>Restaurants</li>
 						<li>Grocery Stores</li>
@@ -203,12 +203,33 @@
 
 				<section>
 					<section>
-						<h2>6. Use icons over images when possible</h2>
+						<h2>6. Orientation</h2>
 					</section>
 					<section>
-						<p><a href="https://github.com/oblador/react-native-vector-icons">react-native-vector-icons</a> has been really easy to use</p>
-						<p class="fragment">Fontello for custom icons</p>
+						<video controls loop width="600" height="600" src="assets/orientation.mp4"></video>
 					</section>
+					<section>
+						<ul>
+							<li>
+								<p>Problem: <a href="https://github.com/facebook/react-native/issues/3219">react-native/issues/3219</a></p>
+								<p><img src="assets/orientation_github.png"></p>
+							</li>
+							<li class="fragment">Solution:</li>
+							<li class="fragment">Use flex everywhere you can!</li>
+							<li class="fragment">Use this alternative to Dimensions.get('window')</li>
+							<li class="fragment">Credit - <a href="https://corbt.com/posts/2016/03/16/detecting-orientation-in-react-native.html">Corbt.com blog post</a></li>
+						</ul>
+					</section>
+					<section>
+						<img class="img-setup" src="assets/orientation_class.png" />
+					</section>
+					<section>
+						<img class="img-setup" src="assets/orientation_reducer.png" />
+					</section>
+					<section>
+						<img class="img-setup" src="assets/device_width.png" />
+					</section>
+
 				</section>
 
 				<section>
@@ -344,6 +365,11 @@
 							<li class="fragment">Use R.C. if you wanna help to identify bugs</li>
 							<li class="fragment">A week after the release is safe for prod. usage</li>
 						</ul>
+					</section>
+					<section>
+						<p>Use icons over images when possible</p>
+						<p class="fragment"><a href="https://github.com/oblador/react-native-vector-icons">react-native-vector-icons</a> has been really easy to use</p>
+						<p class="fragment">Fontello for custom icons</p>
 					</section>
 					<section>
 						<p class="fragment">Testing perfomance / animations with dev=true?</p>
