@@ -119,8 +119,6 @@
 						<p><a class="fragment" href="https://medium.com/delivery-com-engineering/react-native-stop-shaking-your-phone-1f4863140146#.vq2xo7bt7">delivery-com-engineering/react-native-stop-shaking-your-phone</a></p>
 						<p><a class="fragment" href="https://medium.com/komenco/useful-react-native-npm-scripts-6c07b04c3ac3#.wk3lzf145">Other helpful npm scripts</a></p>
 						
-						<p class="fragment">Don't always develop with dev mode = true</p>
-						<!-- Talk about pros / cons of hot reloading (app crashes with circular require references, stateless, etc) -->
 					</section>					
 				</section>
 
@@ -273,6 +271,7 @@
 					</section>
 				</section>
 
+				<!-- NOT SURE WHERE TO PUT THIS SO I'M COMMENTING IT 
 				<section>
 					<section>
 						<h2>9. Orientation</h2>
@@ -283,14 +282,99 @@
 					<section>
 						<p>Notes on Orientation</p>
 					</section>
-				</section>
+				</section> -->
 
 				<section>
 					<section>
-						<h2>10. Native Modules</h2>
+						<h2>9. Native Modules</h2>
 					</section>
 					<section>
-						<p>Notes on Bridging Native Modules</p>
+						<p>Custom modules we've created:</p>
+						<ul class="fragment">
+							<li>
+								Braintree SDK (Android Pay, Paypal & Venmo )
+							</li>
+							<li>TagManager (GA)</li>
+						    <li>Leanplum</li>
+						    <li>Twitter (Sharing)</li>
+						</ul>
+					</section>
+					<section>
+						<p>JS CODE</p>
+					</section>
+					<section>
+						<img class="img-setup" src="assets/native_module_js.png" />
+					</section>
+					<section>
+						<p>JAVA CODE</p>
+					</section>
+					<section>
+						<img class="img-setup" src="assets/native_module_java.png" />
+					</section>
+					<section>
+						<img class="img-setup" src="assets/native_module_java_2.png" />
+					</section>
+					<section>
+						<p>A few things to remember:</p>
+						<ul class="fragment">
+							<li class="fragment" >Remember to add the package in the fn getPackages from your MainApplication.java</li>
+							<li class="fragment">A native module is supposed to invoke its callback only once.</li>
+							<li class="fragment">You can store the callback and invoke it later.</li>
+							<li class="fragment">
+								<p>More info:</p>
+								<p><a href="https://facebook.github.io/react-native/docs/native-modules-android.html">https://facebook.github.io/react-native/docs/native-modules-android.html</a></p>
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>10. Some Tips</h2>
+					</section>
+					<section>
+						<h4>About upgrading versions...</h4>
+					</section>
+					<section>
+						<p class="fragment">React native moves fast</p>
+						<img class="fragment img-gif" src="assets/too_fast.gif" />
+					</section>
+					<section>
+						<ul>
+							<li class="fragment">Almost a new version every 2 weeks</li>
+							<li class="fragment">Try to be always up to date</li>
+							<li class="fragment">Expect breaking changes</li>
+							<li class="fragment">Read release notes (it might fix your bugs)</li>
+							<li class="fragment">Use R.C. if you wanna help to identify bugs</li>
+							<li class="fragment">A week after the release is safe for prod. usage</li>
+						</ul>
+					</section>
+					<section>
+						<p class="fragment">Testing perfomance / animations with dev=true?</p>
+						<img class="fragment img-gif" src="assets/punch.gif" />
+					</section>
+					<section>
+						<p class="fragment">Hot reloading? Awesome (most of the time)</p>
+						<img class="fragment img-gif" src="assets/dunk.gif" />
+					</section>
+					<section>
+						<ul>
+							<li class="fragment">Good for creating new components and styling</li>
+							<li class="fragment">App crashes with circular require references</li>
+							<li class="fragment">Editing Stateless components will also crash the app</li>
+						</ul>
+					</section>
+					<section>
+						<p class="fragment">Before going live, test your release APK or...</p>
+						<img class="fragment img-gif" src="assets/freak_out.gif" />
+					</section>
+					<section>
+						<ul>
+							<li class="fragment">Android is not as consistent as iOS</li>
+							<li class="fragment">Hundreds of devices and OS variations</li>
+							<li class="fragment">Sometimes what you see is NOT what you get</li>
+							<li class="fragment">Test on as many real devices as you can</li>
+							<li class="fragment">BETA program works perfect</li>
+						</ul>
 					</section>
 				</section>
 
