@@ -27,25 +27,37 @@
 
 				<section>
 					<img src="assets/logo.png" />
-					<h2>10 Lessons Learned Building The delivery.com App for Android</h2>
+					<h2>10 Lessons Learned Building <br/> 
+					   The delivery.com App for Android</h2>
 					<p>Jesse Sessler & Bruno Barbieri</p>
 				</section>
 				
+				<!-- SLIDE 1 -->
 				<section>
-					<h2>What is delivery.com?</h2>
-					<p class="fragment">delivery.com is an ecommerce platform that empowers the neighborhood economy by enabling customers to order online from over 10,000 of their favorite local merchants.
-					<ul class="fragment">
-						<li>Restaurants</li>
-						<li>Grocery Stores</li>
-						<li>Wine and Spirits Shops</li>
-						<li>Laundry and Dry Cleaning Providers</li>
-					</ul>
-				</section>
+					<section>
+						<h2>What is delivery.com?</h2>
+						<ul class="fragment">
+							<li>E-Commerce Platform</li>
+							<li>Empowers the neighborhood economy</li>
+							<li>Customers can order online</li>
+						</ul>
+					</section>
 
+					<section>
+						<h3>Over 10.000 local merchants</h3>
+						<ul class="fragment">
+							<li>Restaurants</li>
+							<li>Grocery Stores</li>
+							<li>Wine and Spirits Shops</li>
+							<li>Laundry and Dry Cleaning Providers</li>
+						</ul>
+					</section>
+				</section>
+				<!-- SLIDE 1 -->
 				<section>
 					<section>
 						<h2>Our Quick History With RN</h2>
-						<p class="fragment">Start in October with version ~0.11</p>
+						<p class="fragment">Started in October with version ~0.11</p>
 						<p class="fragment">iOS Only - Integrated into our existing app</p>
 					</section>
 					<section>
@@ -58,31 +70,42 @@
 					<section>
 						<h2>Our Quick History With RN</h2>
 						<p>Previous Android app was Phonegap</p>
-						<p class="fragment">Started Prototyping RN Android App in January</p>
-						<p class="fragment">Received approval and started work in April</p>
-						<p class="fragment">We're currently in Beta with ~300 users</p>
-						<p class="fragment">Well over 50% complete, so far receiving very positive feedback</p>
+						<ul>
+							<li class="fragment">
+								January 2016 - Started Prototyping RN Android App
+							</li>
+							<li class="fragment">
+								April 2016 - Project started</li>
+							<li class="fragment">
+								July 2016 - Beta v1 released (~300 users)
+							</li>
+							<li class="fragment">Today: +50% complete</li>
+							<li class="fragment">Receiving very positive feedback</li>
+						</ul>
 					</section>
 				</section>
-
+				<!-- SLIDE 3 -->
 
 				<section>
-					<h2>App Overview</h2>
-					<p class="fragment">Our "Stack":</p>
-					<ul class="fragment">
-						<li>React Native</li>
-						<li>Redux</li>
-						<li>Android Studio</li>
-						<li>Fabric / Crashlytics for crash reporting</li>
-						<li>Google Analytics / Leanplum for tracking</li>
-					</ul>
-					<p class="fragment">Stats:</p>
-					<ul class="fragment">
-						<li>120 Components</li>
-						<li>7 Bridged Native Modules</li>
-						<li>30 Navigation Routes</li>
-						<li>28 Reducers</li>
-					</ul>
+					<section>
+						<h2>Our "Stack"</h2>
+						<ul class="fragment">
+							<li>React Native</li>
+							<li>Redux</li>
+							<li>Android Studio</li>
+							<li>Fabric / Crashlytics for crash reporting</li>
+							<li>Google Analytics / Leanplum for tracking</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Stats</h2>
+						<ul class="fragment">
+							<li>120 Components</li>
+							<li>7 Bridged Native Modules</li>
+							<li>30 Navigation Routes</li>
+							<li>28 Reducers</li>
+						</ul>
+					</section>
 				</section>
 
 				<section>
@@ -145,7 +168,7 @@
 						</div>
 					</section>
 					<section>
-						<p>The Fake Nav Bar Hack</p>
+						<p>The "Fake Nav Bar" Hack</p>
 						<div class="fragment img-inline">
 							<video controls loop width="500" height="500" src="assets/fake_nav_before.mp4"></video>
 							<video controls loop width="500" height="500" src="assets/fake_nav_after.mp4"></video>
@@ -162,7 +185,7 @@
 						<ul>
 							<li>Redux for app-wide state</li>
 							<li>this.state for component state</li>
-							<li>Local variables when it doesn't affect rendering</li>
+							<li>Instance variables when it doesn't affect rendering</li>
 						</ul>
 						<!-- Redux is great for large state management but at a certain scale waiting for redux to trigger re-renders can be too slow -->
 						<p class="fragment">Structure:<br />Views(redux) &rarr; Components</p>
@@ -178,7 +201,6 @@
 					<section>
 						<p>initialListSize and scrollRenderAheadDistance powerful</p>
 						<p class="fragment">Tradeoff between rows loaded & time spent</p>
-						<p class="fragment">Any other ListView tricks we've used?</p>
 					</section>
 				</section>
 				
@@ -187,7 +209,7 @@
 						<h2>5. Sharing Code With Other Platforms</h2>
 					</section>
 					<section>
-						<p>Web, IOS, Android teams all use React / React Native + Redux</p>
+						<p>Web, IOS, Android teams all now use React / React Native + Redux</p>
 						<p class="fragment">Keep most non-component code in a shared Git repository, which is a dependency through npm</p>
 						<img class="fragment" src="assets/packagejson.png" />
 					</section>
@@ -237,20 +259,33 @@
 
 				<section>
 					<section>
-						<h2>7. You'll Find Missing Features, Contribute to RN!</h2>
+						<h2>7. IF YOU SEE SOMETHING,<br />
+							SAY SOMETHING</h2>
+						<h4>OR EVEN BETTER... FIX IT!</h4>
 					</section>
 					<section>
-						<p>Really good way to learn</p>
-						<p class="fragment">You don't need to know Obj C or Java to contribute</p>
-						<p class="fragment">We've had 5 Android contributions without knowing Android development</p>
-						<p class="fragment">Before you contribute:</p>
+						<p class="fragment">If you find a bug, open a github issue</p>
+						<p class="fragment">Check first if it's known, then upvote</p>
+						<p class="fragment">Use stack overflow for questions (tag react-native)</p>
+					</section>
+					<section>
+						<h3>Contributing</h3>
+
+						<p class="fragment">REALLY good way to learn</p>
+						<p class="fragment">No need to know Obj-C or Java to contribute</p>
+						<p class="fragment">We've had 5 Android contributions so far</p>
+					</section>
+					<section>
+						<h3>Before submitting PRs</h3>
 						<ul class="fragment">
-							<li>Read <a href="https://github.com/facebook/react-native/blob/master/CONTRIBUTING.md">contributing guidelines</a></li>
-							<li>Look around the issues / pull requests to see if a fix exists</li>
-							<li>Check <a href="https://js.coach/">js.coach</a> for an external package</li>
-							<li>Ask the Facebook group or discord if this is a needed feature that no one is working on</li>
-							<li>Getting code merged to master in RN core is a time consuming process, be sure it's worth it before you start</li>
+							<li class="fragment">Look around issues / PRs</li>
+							<li class="fragment">Check <a href="https://js.coach/">js.coach</a> for existing external packages</li>
+							<li class="fragment">If in doubt, Ask the FB group or discord first</li>
+							<li class="fragment">Read <a href="https://github.com/facebook/react-native/blob/master/CONTRIBUTING.md">contributing guidelines</a></li>
+							<li class="fragment">Getting your code merged is<br />a time consuming (but rewarding) process</li>
+							<li class="fragment">In the meantime you can use your fork and build from source</li>
 						</ul>
+
 					</section>
 				</section>
 				
@@ -349,13 +384,13 @@
 						<h2>10. Some Tips</h2>
 					</section>
 					<section>
-						<p class="fragment">React Native moves FAST</p>
+						<p>React Native moves FAST</p>
 						<img class="fragment img-gif" src="assets/too_fast.gif" />
 					</section>
 					<section>
 						<ul>
 							<li class="fragment">Almost a new version every 2 weeks</li>
-							<li class="fragment">Try to be always up to date</li>
+							<li class="fragment">Try to always be up to date</li>
 							<li class="fragment">Expect breaking changes</li>
 							<li class="fragment">Read release notes (it might fix your bugs)</li>
 							<li class="fragment">Use R.C. if you wanna help to identify bugs</li>
@@ -379,11 +414,11 @@
 						<ul>
 							<li class="fragment">Good for creating new components and styling</li>
 							<li class="fragment">App crashes with circular require references</li>
-							<li class="fragment">Editing Stateless components will also crash the app</li>
+							<li class="fragment">Editing Stateless functional components will also crash the app</li>
 						</ul>
 					</section>
 					<section>
-						<p class="fragment">Before going live, test your release APK or...</p>
+						<p class="fragment">Test your release APK early and often</p>
 						<img class="fragment img-gif" src="assets/freak_out.gif" />
 					</section>
 					<section>
@@ -392,31 +427,42 @@
 							<li class="fragment">Hundreds of devices and OS variations</li>
 							<li class="fragment">Sometimes what you see is NOT what you get</li>
 							<li class="fragment">Test on as many real devices as you can</li>
-							<li class="fragment">BETA program works perfect</li>
+							<li class="fragment">Consider BETA program</li>
 						</ul>
 					</section>
 				</section>
 				<section>
-					<!-- TBD --
-
-					<section>
-						<p>
-							If you wanna join our android beta program:
-							<a hre="mailto:androidbetafeedback@delivery.com">androidbetafeedback@delivery.com</a>
-						</p>
-						10% off in all your orders until october!
-					</section>
-					-->
+				<section>
+					<h2>
+						Join our android beta program
+					</h2>
+					<p></p>
+					<p></p>
+					<p class="fragment">
+						<a href="https://play.google.com/apps/testing/com.deliverycom/">https://play.google.com/apps/testing/com.deliverycom/</a>
+					</p>
+					<p></p>
+					<p></p>
+					<p class="fragment">Email us at <a href="mailto:androidbetafeedback@delivery.com">androidbetafeedback@delivery.com</a><br />
+					and get a 10% off in all beta app your orders!
+					</p>
+					
+				</section>
+					
 					<section>
 						<h2>THANKS!</h2>
 
-						<p>
+						<p class="fragment">
 							<a href="https://twitter.com/jsessler">@jsessler</a>
 							&amp;
 							<a href="https://twitter.com/brunobar79">@brunobar79</a>
 						</p>
-						<p>
-							Slides: <a href="#">LINK TBD</a>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p></p>
+						<p class="fragment">
+							Slides: <a href="http://bit.ly/dcom-android">http://bit.ly/dcom-android</a>
 						</p>
 					</section>
 			</div>
