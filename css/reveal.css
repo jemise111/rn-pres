@@ -1335,14 +1335,14 @@ body {
 .img-demo {
   height: 400px; }
 
+.img-item-modal {
+  height: 500px; }
+
 .img-setup {
   height: 600px; }
 
 .img-code {
-  height: 100px; }
+  height: 150px; }
 
 .img-code-large {
   height: 300px; }
-
-.img-gif {
-  height: 600px; }

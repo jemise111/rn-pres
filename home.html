@@ -69,9 +69,8 @@
 
 					<section>
 						<h2>Our Quick History With RN</h2>
-						
-						<p>Android app: Phonegap</p>
-						<ul>
+						<p>Previous Android app was Phonegap</p>
+						<						<ul>
 							<li class="fragment">
 								January 2016 - Started Prototyping RN Android App
 							</li>
@@ -129,20 +128,21 @@
 						<img class="img-setup" src="assets/setup.png" />
 					</section>
 					<section>
-						<p>Other tabs we keep open:</p>
-						<ul class="fragment">
-							<li>RN Facebook Group</li>
-							<li>Discord Chat</li>
-						</ul>
-						<p class="fragment">Helpful Scripts</p>
+						<p>Helpful Scripts</p>
 						<div class="fragment img-inline">
 							<img class="img-code" src="assets/alias.png" />
 							<img class="img-code" src="assets/install_debug.png" />
 							<img class="img-code" src="assets/install_apk.png" />
 						</div>
-						<p><a class="fragment" href="https://medium.com/delivery-com-engineering/react-native-stop-shaking-your-phone-1f4863140146#.vq2xo7bt7">delivery-com-engineering/react-native-stop-shaking-your-phone</a></p>
-						<p><a class="fragment" href="https://medium.com/komenco/useful-react-native-npm-scripts-6c07b04c3ac3#.wk3lzf145">Other helpful npm scripts</a></p>
-						
+					</section>
+					<section>
+						<p>Other helpful links</p>
+						<ul class="fragment">
+							<li><a href="https://medium.com/delivery-com-engineering/react-native-stop-shaking-your-phone-1f4863140146#.vq2xo7bt7">delivery-com-engineering/react-native-stop-shaking-your-phone</a></li>
+							<li><a href="https://medium.com/komenco/useful-react-native-npm-scripts-6c07b04c3ac3#.wk3lzf145">komenco/useful-react-native-npm-scripts</a></li>
+							<li><a href="https://www.facebook.com/groups/react.native.community/">RN Community Facebook Group</a></li>
+							<li><a href="https://discordapp.com/channels/102860784329052160">Discord Reactiflux Channel</a></li>
+						</ul>
 					</section>					
 				</section>
 
@@ -217,7 +217,7 @@
 						<img src="assets/fsl.png" />
 					</section>
 					<section>
-						<img class="img-demo" src="assets/item_modal_view.png" />
+						<img class="img-item-modal" src="assets/item_modal_view.png" />
 						<p class="fragment">We're now sharing developers across teams as well!</p>
 						<!-- Talk about how good the experience has been and how Iveta has been really productive since day 1 with
 						virtually no help from either of us -->
@@ -237,10 +237,12 @@
 								<p>Problem: <a href="https://github.com/facebook/react-native/issues/3219">react-native/issues/3219</a></p>
 								<p><img src="assets/orientation_github.png"></p>
 							</li>
-							<li class="fragment">Solution:</li>
-							<li class="fragment">Use flex everywhere you can!</li>
-							<li class="fragment">Use this alternative to Dimensions.get('window')</li>
-							<li class="fragment">Credit - <a href="https://corbt.com/posts/2016/03/16/detecting-orientation-in-react-native.html">Corbt.com blog post</a></li>
+							<li class="fragment">Possible Solutions:</li>
+							<li class="fragment">Only use Flex (never use Dimensions)</li>
+							<li class="fragment">Sometimes Dimensions can't be avoided, think &lt;Image /&gt;</li>
+							<li class="fragment"><a href="https://github.com/walmartreact/react-native-orientation-listener">react-native-orientation-listener</a></li>
+							<li class="fragment"><a href="https://github.com/jaysoo/react-native-extra-dimensions-android">react-native-extra-dimensions-android</a></li>
+							<li class="fragment">Our Approach (Credit - <a href="https://corbt.com/posts/2016/03/16/detecting-orientation-in-react-native.html">Corbt.com blog post</a>)</li>
 						</ul>
 					</section>
 					<section>
@@ -296,8 +298,9 @@
 					</section>
 					<section>
 						<p>First thought: ScrollView + onScroll + setState</p>
-						<p class="fragment">Very choppy, onScroll doesn't fire often enough</p>
+						<p class="fragment">Choppy, setState() is too expensive</p>
 						<p class="fragment">Use Animated.event instead</p>
+						<p class="fragment">Bypass setState, call setValue directly on Animated Values</p>
 					</section>
 					<section>
 						<img src="assets/parallax_constructor.png" />
@@ -309,10 +312,12 @@
 						<img src="assets/parallax_header.png" />
 					</section>
 					<section>
-						<p>Inspiration:</p>
+						<p>More:</p>
 						<ul class="fragment">
 							<li><a href="https://github.com/facebook/react-native/issues/2228">Github Issue: onScroll event throttling</a></li>
 							<li><a href="https://github.com/jaysoo/react-native-parallax-scroll-view/blob/master/src/index.js">react-native-parallax-scroll-view</a></li>
+							<li><a href="http://browniefed.com/react-native-animation-book/api/EVENT.html">browniefed.com/react-native-animation-book</a></li>
+							<li><a href="http://facebook.github.io/react-native/docs/animated.html#event">React Native Documentation</a></li>
 						</ul>
 					</section>
 					<section>
@@ -336,7 +341,7 @@
 						<p>Custom modules we've created:</p>
 						<ul class="fragment">
 							<li>
-								Braintree SDK (Android Pay, Paypal & Venmo )
+								Braintree SDK (Android Pay, Paypal & Venmo)
 							</li>
 							<li>TagManager (GA)</li>
 						    <li>Leanplum</li>
