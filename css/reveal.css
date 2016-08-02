@@ -1347,6 +1347,9 @@ body {
 .img-code-large {
   height: 300px; }
 
+.img-gif {
+  height: 550px; }
+
 .no-margin {
   margin: 0px !important;
   padding: 0px !important;
