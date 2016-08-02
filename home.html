@@ -199,8 +199,15 @@
 					</section>
 
 					<section>
-						<p>initialListSize and scrollRenderAheadDistance powerful</p>
 						<p class="fragment">Tradeoff between rows loaded & time spent</p>
+						<ul>
+							<li class="fragment">initialListSize: How many rows on first render pass</li>
+							<li class="fragment">pageSize: How many rows to render per frame</li>
+							<li class="fragment">scrollRenderAheadDistance: How early to start rendering rows</li>
+							<li class="fragment">Tweak and find what works for you</li>
+						</ul>
+
+						<p class="fragment">Alternative: <a href="https://github.com/sghiassy/react-native-sglistview">react-native-sglistview</a></p>
 					</section>
 				</section>
 
