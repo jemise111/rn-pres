@@ -109,12 +109,8 @@ androidbetafeedback@delivery.com / mention 10% off on all your orders until the 
 
 5. Have Demo Video Prepared but do live demo
 
-6. "Other tabs we keep open" maybe move to last slide - maybe make links and just have generic useful links section
-
 12. Get numbers on Total FSL Files / Total Repo files
-
-13. Find example of where to use Dimension based width / height
 
 17. Video for JumpTo is confusing. Just do a few jump menu JumpTo's
 
-24. MAYBE REMOVE ORIENTATION (talked more with Ben about this one)
+24. MAYBE REMOVE ORIENTATION (talked more with Ben about this one) - 
