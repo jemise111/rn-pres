@@ -44,7 +44,7 @@
 					</section>
 
 					<section>
-						<h3>Over 10.000 local merchants</h3>
+						<h3>Over 10,000 local merchants</h3>
 						<ul class="fragment">
 							<li>Restaurants</li>
 							<li>Grocery Stores</li>
@@ -79,7 +79,7 @@
 							<li class="fragment">
 								July 2016 - Beta v1 released (~300 users)
 							</li>
-							<li class="fragment">Today: +50% complete</li>
+							<li class="fragment">Today: >50% complete</li>
 							<li class="fragment">Receiving very positive feedback</li>
 						</ul>
 					</section>
@@ -148,7 +148,23 @@
 
 				<section>
 					<section>
-						<h2>2. Navigation Tricks</h2>
+						<h2>2. Redux vs State</h2>
+					</section>
+					<section>
+						<ul>
+							<li>Redux for app-wide state</li>
+							<li>this.state for component state</li>
+							<li>Instance variables when it doesn't affect rendering</li>
+						</ul>
+						<!-- Redux is great for large state management but at a certain scale waiting for redux to trigger re-renders can be too slow -->
+						<p class="fragment">Structure:<br />Views(redux) &rarr; Components</p>
+						<!-- Tried to stick to convention of only connecting Views to Redux but sometimes just makes sense to connect components (applies for global components like navbar) -->
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>3. Navigation Tricks</h2>
 					</section>
 					<section>
 						<p>We're using the legacy Navigator<br/>Experimental was brand new and unstable when we started</p>
@@ -179,22 +195,6 @@
 
 				<section>
 					<section>
-						<h2>3. Redux vs State</h2>
-					</section>
-					<section>
-						<ul>
-							<li>Redux for app-wide state</li>
-							<li>this.state for component state</li>
-							<li>Instance variables when it doesn't affect rendering</li>
-						</ul>
-						<!-- Redux is great for large state management but at a certain scale waiting for redux to trigger re-renders can be too slow -->
-						<p class="fragment">Structure:<br />Views(redux) &rarr; Components</p>
-						<!-- Tried to stick to convention of only connecting Views to Redux but sometimes just makes sense to connect components (applies for global components like navbar) -->
-					</section>
-				</section>
-
-				<section>
-					<section>
 						<h2>4. Improving Large List Performance</h2>
 					</section>
 
@@ -203,142 +203,10 @@
 						<p class="fragment">Tradeoff between rows loaded & time spent</p>
 					</section>
 				</section>
-				
-				<section>
-					<section>
-						<h2>5. Sharing Code With Other Platforms</h2>
-					</section>
-					<section>
-						<p>Web, IOS, Android teams all now use React / React Native + Redux</p>
-						<p class="fragment">Keep most non-component code in a shared Git repository, which is a dependency through npm</p>
-						<img class="fragment" src="assets/packagejson.png" />
-					</section>
-					<section>
-						<img src="assets/fsl.png" />
-					</section>
-					<section>
-						<img class="img-item-modal" src="assets/item_modal_view.png" />
-						<p class="fragment">We're now sharing developers across teams as well!</p>
-						<!-- Talk about how good the experience has been and how Iveta has been really productive since day 1 with
-						virtually no help from either of us -->
-					</section>
-				</section>
 
 				<section>
 					<section>
-						<h2>6. Orientation</h2>
-					</section>
-					<section>
-						<video controls loop width="600" height="600" src="assets/orientation.mp4"></video>
-					</section>
-					<section>
-						<ul>
-							<li>
-								<p>Problem: <a href="https://github.com/facebook/react-native/issues/3219">react-native/issues/3219</a></p>
-								<p><img src="assets/orientation_github.png"></p>
-							</li>
-							<li class="fragment">Possible Solutions:</li>
-							<li class="fragment">Only use Flex (never use Dimensions)</li>
-							<li class="fragment">Sometimes Dimensions can't be avoided, think &lt;Image /&gt;</li>
-							<li class="fragment"><a href="https://github.com/walmartreact/react-native-orientation-listener">react-native-orientation-listener</a></li>
-							<li class="fragment"><a href="https://github.com/jaysoo/react-native-extra-dimensions-android">react-native-extra-dimensions-android</a></li>
-							<li class="fragment">Our Approach (Credit - <a href="https://corbt.com/posts/2016/03/16/detecting-orientation-in-react-native.html">Corbt.com blog post</a>)</li>
-						</ul>
-					</section>
-					<section>
-						<img class="img-setup" src="assets/orientation_class.png" />
-					</section>
-					<section>
-						<img class="img-setup" src="assets/orientation_reducer.png" />
-					</section>
-					<section>
-						<img class="img-setup" src="assets/device_width.png" />
-					</section>
-
-				</section>
-
-				<section>
-					<section>
-						<h2>7. IF YOU SEE SOMETHING,<br />
-							SAY SOMETHING</h2>
-						<h4>OR EVEN BETTER... FIX IT!</h4>
-					</section>
-					<section>
-						<p class="fragment">If you find a bug, open a github issue</p>
-						<p class="fragment">Check first if it's known, then upvote</p>
-						<p class="fragment">Use stack overflow for questions (tag react-native)</p>
-					</section>
-					<section>
-						<h3>Contributing</h3>
-
-						<p class="fragment">REALLY good way to learn</p>
-						<p class="fragment">No need to know Obj-C or Java to contribute</p>
-						<p class="fragment">We've had 5 Android contributions so far</p>
-					</section>
-					<section>
-						<h3>Before submitting PRs</h3>
-						<ul class="fragment">
-							<li class="fragment">Look around issues / PRs</li>
-							<li class="fragment">Check <a href="https://js.coach/">js.coach</a> for existing external packages</li>
-							<li class="fragment">If in doubt, Ask the FB group or discord first</li>
-							<li class="fragment">Read <a href="https://github.com/facebook/react-native/blob/master/CONTRIBUTING.md">contributing guidelines</a></li>
-							<li class="fragment">Getting your code merged is<br />a time consuming (but rewarding) process</li>
-							<li class="fragment">In the meantime you can use your fork and build from source</li>
-						</ul>
-
-					</section>
-				</section>
-				
-				<section>
-					<section>
-						<h2>8. Parallax and Other Scrolling Tricks</h2>
-					</section>
-					<section>
-						<video controls loop width="600" height="600" src="assets/parallax.mp4"></video>
-					</section>
-					<section>
-						<p>First thought: ScrollView + onScroll + setState</p>
-						<p class="fragment">Choppy, setState() is too expensive</p>
-						<p class="fragment">Use Animated library instead</p>
-						<p class="fragment">Bypass setState, call setValue directly on Animated Values</p>
-					</section>
-					<section>
-						<img src="assets/parallax_constructor.png" />
-					</section>
-					<section>
-						<img src="assets/parallax_animated_event_1.png" />
-						<p class="no-margin">or</p>
-						<img src="assets/parallax_animated_event_2.png" />
-					</section>
-					<section>
-						<img src="assets/parallax_header.png" />
-					</section>
-					<section>
-						<p>More:</p>
-						<ul class="fragment">
-							<li><a href="https://github.com/facebook/react-native/issues/2228">Github Issue: onScroll event throttling</a></li>
-							<li><a href="https://github.com/jaysoo/react-native-parallax-scroll-view/blob/master/src/index.js">react-native-parallax-scroll-view</a></li>
-							<li><a href="http://browniefed.com/react-native-animation-book/api/EVENT.html">browniefed.com/react-native-animation-book</a></li>
-							<li><a href="http://facebook.github.io/react-native/docs/animated.html#event">React Native Documentation</a></li>
-							<li><a href="https://medium.com/@dabit3/react-native-animations-using-the-animated-api-ebe8e0669fae#.yl4c51vim">@dabit3/react-native-animations-using-the-animated-api</a></li>
-						</ul>
-					</section>
-					<section>
-						<video controls loop width="600" height="600" src="assets/find_node_handle.mp4"></video>
-					</section>
-					<section>
-						<p>Programmatic scrolling is easy and performant</p>
-						<p>measureLayout + findNodeHandle <a href="http://facebook.github.io/react-native/releases/0.30/docs/nativemethodsmixin.html#measurelayout">(docs)</a></p>
-					</section>
-					<section>
-						<img src="assets/render_section_header.png" />
-						<img src="assets/on_jump_menu_press.png" />
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>9. Native Modules</h2>
+						<h2>5. Native Modules</h2>
 					</section>
 					<section>
 						<p>Custom modules we've created:</p>
@@ -379,9 +247,151 @@
 						</ul>
 					</section>
 				</section>
+				
 				<section>
 					<section>
-						<h2>10. Some Tips</h2>
+						<h2>6. Parallax and Other Scrolling Tricks</h2>
+					</section>
+					<section>
+						<video controls loop width="600" height="600" src="assets/parallax.mp4"></video>
+					</section>
+					<section>
+						<p>First thought: ScrollView + onScroll + setState</p>
+						<p class="fragment">Choppy, setState() is too expensive</p>
+						<p class="fragment">Use Animated library instead</p>
+						<p class="fragment">Bypass setState, call setValue directly on Animated Values</p>
+					</section>
+					<section>
+						<img src="assets/parallax_constructor.png" />
+					</section>
+					<section>
+						<img src="assets/parallax_animated_event_2.png" />
+						<p class="no-margin">or</p>
+						<img src="assets/parallax_animated_event_1.png" />
+					</section>
+					<section>
+						<img src="assets/parallax_header.png" />
+					</section>
+					<section>
+						<p>More:</p>
+						<ul class="fragment">
+							<li><a href="https://github.com/facebook/react-native/issues/2228">Github Issue: onScroll event throttling</a></li>
+							<li><a href="https://github.com/jaysoo/react-native-parallax-scroll-view/blob/master/src/index.js">react-native-parallax-scroll-view</a></li>
+							<li><a href="http://browniefed.com/react-native-animation-book/api/EVENT.html">browniefed.com/react-native-animation-book</a></li>
+							<li><a href="http://facebook.github.io/react-native/docs/animated.html#event">React Native Documentation</a></li>
+							<li><a href="https://medium.com/@dabit3/react-native-animations-using-the-animated-api-ebe8e0669fae#.yl4c51vim">@dabit3/react-native-animations-using-the-animated-api</a></li>
+						</ul>
+					</section>
+					<section>
+						<video controls loop width="600" height="600" src="assets/find_node_handle.mp4"></video>
+					</section>
+					<section>
+						<p>Programmatic scrolling is easy and performant</p>
+						<p>measureLayout + findNodeHandle <a href="http://facebook.github.io/react-native/releases/0.30/docs/nativemethodsmixin.html#measurelayout">(docs)</a></p>
+					</section>
+					<section>
+						<img src="assets/render_section_header.png" />
+						<img src="assets/on_jump_menu_press.png" />
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>7. Orientation</h2>
+					</section>
+					<section>
+						<video controls loop width="600" height="600" src="assets/orientation.mp4"></video>
+					</section>
+					<section>
+						<ul>
+							<li>
+								<p>Problem: <a href="https://github.com/facebook/react-native/issues/3219">react-native/issues/3219</a></p>
+								<p><img src="assets/orientation_github.png"></p>
+							</li>
+							<li class="fragment">Possible Solutions:</li>
+							<li class="fragment">Only use Flex (never use Dimensions)</li>
+							<li class="fragment">Sometimes Dimensions can't be avoided, think &lt;Image /&gt;</li>
+							<li class="fragment"><a href="https://github.com/walmartreact/react-native-orientation-listener">react-native-orientation-listener</a></li>
+							<li class="fragment"><a href="https://github.com/jaysoo/react-native-extra-dimensions-android">react-native-extra-dimensions-android</a></li>
+							<li class="fragment">Our Approach (Credit - <a href="https://corbt.com/posts/2016/03/16/detecting-orientation-in-react-native.html">Corbt.com blog post</a>)</li>
+						</ul>
+					</section>
+					<section>
+						<img class="img-setup" src="assets/orientation_class_1.png" />
+					</section>
+					<section>
+						<img class="img-setup" src="assets/orientation_class_2.png" />
+					</section>
+					<section>
+						<img class="img-setup" src="assets/orientation_reducer.png" />
+					</section>
+					<section>
+						<img class="img-setup" src="assets/device_width.png" />
+					</section>
+
+				</section>
+				
+				<section>
+					<section>
+						<h2>8. Sharing Code With Other Platforms</h2>
+					</section>
+					<section>
+						<p>Web, IOS, Android teams all now use React / React Native + Redux</p>
+						<p class="fragment">Keep most non-component code in a shared Git repository, which is a dependency through npm</p>
+						<p class="fragment">41% of Javascript files written for the app are shared</p>
+						<img class="fragment" src="assets/packagejson.png" />
+					</section>
+					<section>
+						<img src="assets/fsl.png" />
+					</section>
+					<section>
+						<img class="img-item-modal" src="assets/item_modal_view.png" />
+						<p class="fragment">We're now sharing developers across teams as well!</p>
+						<!-- Talk about how good the experience has been and how Iveta has been really productive since day 1 with
+						virtually no help from either of us -->
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>9. IF YOU SEE SOMETHING,<br />
+							SAY SOMETHING</h2>
+						<h4>OR EVEN BETTER... FIX IT!</h4>
+					</section>
+					<section>
+						<p>If you find a bug, open a github issue</p>
+						<p class="fragment">Check first if it's known, then upvote</p>
+						<p class="fragment">Use stack overflow for questions (tag react-native)</p>
+					</section>
+					<section>
+						<h3>Contributing</h3>
+
+						<p class="fragment">REALLY good way to learn</p>
+						<p class="fragment">No need to know Obj-C or Java to contribute</p>
+						<p class="fragment">We've had 5 Android contributions so far</p>
+					</section>
+					<section>
+						<h3>Before submitting PRs</h3>
+						<ul>
+							<li class="fragment">Look around issues / PRs</li>
+							<li class="fragment">Check <a href="https://js.coach/">js.coach</a> for existing external packages</li>
+							<li class="fragment">If in doubt, Ask the FB group or discord first</li>
+							<li class="fragment">Read <a href="https://github.com/facebook/react-native/blob/master/CONTRIBUTING.md">contributing guidelines</a></li>
+							<li class="fragment">Getting your code merged is<br />a time consuming (but rewarding) process</li>
+							<li class="fragment">In the meantime you can use your fork and build from source</li>
+						</ul>
+
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>10. Other Various Tips</h2>
+					</section>
+					<section>
+						<p>Use icons over images when possible</p>
+						<p class="fragment"><a href="https://github.com/oblador/react-native-vector-icons">react-native-vector-icons</a> has been really easy to use</p>
+						<p class="fragment">Fontello for custom icons</p>
 					</section>
 					<section>
 						<p>React Native moves FAST</p>
@@ -396,11 +406,6 @@
 							<li class="fragment">Use R.C. if you wanna help to identify bugs</li>
 							<li class="fragment">A week after the release is safe for prod. usage</li>
 						</ul>
-					</section>
-					<section>
-						<p>Use icons over images when possible</p>
-						<p class="fragment"><a href="https://github.com/oblador/react-native-vector-icons">react-native-vector-icons</a> has been really easy to use</p>
-						<p class="fragment">Fontello for custom icons</p>
 					</section>
 					<section>
 						<p class="fragment">Testing perfomance / animations with dev=true?</p>
@@ -444,7 +449,7 @@
 					<p></p>
 					<p></p>
 					<p class="fragment">Email us at <a href="mailto:androidbetafeedback@delivery.com">androidbetafeedback@delivery.com</a><br />
-					and get a 10% off in all beta app your orders!
+					and get 10% off all your beta app orders!
 					</p>
 					
 				</section>
